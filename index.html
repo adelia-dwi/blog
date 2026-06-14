@@ -18,8 +18,8 @@
 
   /* ── NAV ── */
   nav { background:var(--surface); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:100; }
-  .nav-inner { max-width:1100px; margin:auto; padding:0 1.5rem; display:flex; align-items:center; gap:2rem; height:64px; }
-  .logo { font-family:'Playfair Display',serif; font-size:1.4rem; color:var(--teal); font-weight:700; text-decoration:none; letter-spacing:-0.5px; }
+  .nav-inner { max-width:1100px; margin:auto; padding:0 1rem; display:flex; align-items:center; gap:2rem; height:64px; }
+  .logo { font-family:'Playfair Display',serif; font-size:1.4rem; color:var(--teal); font-weight:700; text-decoration:none;}
   .logo span { color:var(--coral); }
   nav a { color:var(--text-muted); text-decoration:none; font-size:0.875rem; font-weight:500; padding:0.35rem 0.7rem; border-radius:6px; transition:all .2s; }
   nav a:hover, nav a.active { background:var(--teal-light); color:var(--teal); }
@@ -43,7 +43,13 @@
 
   /* ── FEATURED CARD ── */
   .featured-card { background:var(--surface); border:1px solid var(--border); border-radius:16px; overflow:hidden; margin-bottom:2rem; }
-  .featured-img { width:100%; height:220px; object-fit:cover; background:linear-gradient(135deg,var(--teal-light),var(--teal-mid)); display:flex; align-items:center; justify-content:center; font-size:5rem; }
+  .featured-img { width:100%; height:300px; object-fit:cover; background:linear-gradient(135deg,var(--teal-light),var(--teal-mid)); display:flex; align-items:center; justify-content:center; font-size:5rem;overflow:hidden;}
+  .featured-img img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
   .featured-body { padding:1.5rem; }
   .article-cat { display:inline-block; background:var(--teal-light); color:var(--teal); font-size:0.72rem; font-weight:600; letter-spacing:1px; padding:0.25rem 0.75rem; border-radius:999px; text-transform:uppercase; margin-bottom:0.75rem; }
   .featured-body h2 { font-family:'Playfair Display',serif; font-size:1.5rem; margin-bottom:0.6rem; line-height:1.3; }
@@ -166,12 +172,12 @@
 
   /* article long */
   .long-article { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:2rem; margin-bottom:2rem; }
-  .long-article h2 { font-family:'Playfair Display',serif; font-size:1.6rem; margin-bottom:0.5rem; }
-  .long-article .meta { font-size:0.8rem; color:var(--text-hint); margin-bottom:1.5rem; }
-  .long-article p { font-size:0.9rem; line-height:1.8; margin-bottom:1rem; color:var(--text-muted); }
-  .long-article h3 { font-size:1rem; font-weight:700; color:var(--teal); margin:1.5rem 0 0.5rem; }
-  .long-article ul { margin:0.5rem 0 1rem 1.25rem; }
-  .long-article li { font-size:0.87rem; line-height:1.7; color:var(--text-muted); margin-bottom:0.3rem; }
+  .long-article h2, .featured-body h2 { font-family:'Playfair Display',serif; font-size:1.6rem; margin-bottom:0.5rem; }
+  .long-article .meta, .featured-body meta { font-size:0.8rem; color:var(--text-hint); margin-bottom:1.5rem; }
+  .long-article p, .featured-body p { font-size:0.9rem; line-height:1.8; margin-bottom:1rem; color:var(--text-muted); }
+  .long-article h3, .featured-body h3 { font-size:1rem; font-weight:700; color:var(--teal); margin:1.5rem 0 0.5rem; }
+  .long-article ul, .featured-body ul { margin:0.5rem 0 1rem 1.25rem; }
+  .long-article li, .featured-body li { font-size:0.87rem; line-height:1.7; color:var(--text-muted); margin-bottom:0.3rem; }
   .callout { background:var(--teal-light); border-left:4px solid var(--teal); border-radius:0 10px 10px 0; padding:1rem 1.25rem; margin:1.5rem 0; }
   .callout p { margin:0; font-size:0.87rem; color:var(--teal); }
 
@@ -277,7 +283,7 @@
         <p>Klinik Gigi & Mulut terpercaya di Palembang dengan tenaga profesional berpengalaman, peralatan modern, dan pelayanan yang ramah. Kami berkomitmen memberikan senyum terbaik untuk setiap pasien.</p>
         <div class="clinic-meta">
           <span class="clinic-chip">📍 Jl. Sukabangun 2, Palembang</span>
-          <span class="clinic-chip">🕐 Senin–Minggu 09.00–20.00</span>
+          <span class="clinic-chip">🕐 Senin–Minggu</span>
           <span class="clinic-chip">📞 (0881) 805-6161</span>
           <span class="clinic-chip">✅ Umum</span>
         </div>
@@ -363,7 +369,7 @@
           <div class="t-icon amber">🔩</div>
           <div class="t-body">
             <h4>Pemasangan Kawat Gigi</h4>
-            <p>Ortodonti cekat (bracket metal/ceramic) untuk merapikan susunan gigi. Konsultasi orthodontist tersedia.</p>
+            <p>Ortodonti cekat (bracket metal/ceramic) untuk merapikan susunan gigi.</p>
           </div>
         </div>
 
@@ -488,7 +494,9 @@
     <!-- FEATURED ARTICLE: ISU STRATEGIS -->
     <div class="section-label">Artikel Utama</div>
     <div class="featured-card">
-      <div class="featured-img">🦷🌿💪</div>
+      <div class="featured-img">
+        <img src="img-artikel/wacana.jpeg" alt="" srcset="">
+      </div>
       <div class="featured-body">
         <span class="article-cat">Isu Strategis 2026</span>
         <h2>Peran Kesehatan Gigi dalam Mendukung 6 Isu Strategis Pembangunan Kesehatan Nasional</h2>
@@ -568,10 +576,229 @@
       </div>
     </div>
 
+    <div class="section-label">Artikel Peminatan</div>
+    <div class="featured-card">
+      <div class="featured-img">
+        <img src="img-artikel/anatomi.jpeg" alt="" srcset="">
+      </div>
+      <div class="featured-body">
+        <h2>Gigi Berlubang</h2>
+        <p class="meta">✍️ Dipublikasikan Juni 2026 &nbsp;|&nbsp; 🦷 Kesehatan Gigi &nbsp;|&nbsp; 📍 Palembang, Sumatera Selatan</p>
+
+        <p>
+        Gigi berlubang merupakan salah satu masalah kesehatan gigi dan mulut yang paling umum terjadi di seluruh dunia...
+      </p>
+
+      <p>
+        Menurut World Health Organization, penyakit gigi dan mulut termasuk masalah kesehatan yang paling banyak dialami masyarakat dunia...
+      </p>
+
+      <h3>Apa Itu Gigi Berlubang?</h3>
+
+      <p>
+        Gigi berlubang atau karies gigi adalah kerusakan jaringan keras gigi yang terjadi akibat proses demineralisasi...
+      </p>
+
+      <p>
+        Karies gigi terjadi ketika bakteri dalam plak gigi mengubah sisa makanan yang mengandung gula menjadi asam...
+      </p>
+
+      <h3>Struktur Anatomi Gigi</h3>
+
+      <ul>
+        <li>
+          <strong>Email (Enamel)</strong>
+          <p>Lapisan terluar gigi yang paling keras dan berfungsi melindungi bagian dalam gigi.</p>
+        </li>
+
+        <li>
+          <strong>Dentin</strong>
+          <p>Lapisan di bawah email yang lebih lunak dan sensitif terhadap rangsangan.</p>
+        </li>
+
+        <li>
+          <strong>Pulpa</strong>
+          <p>Bagian terdalam gigi yang berisi saraf dan pembuluh darah.</p>
+        </li>
+
+        <li>
+          <strong>Akar Gigi</strong>
+          <p>Bagian gigi yang tertanam dalam tulang rahang dan berfungsi menopang gigi.</p>
+        </li>
+      </ul>
+
+      <p>
+        Apabila kerusakan mencapai pulpa, rasa sakit akan menjadi lebih hebat dan dapat menyebabkan infeksi.
+      </p>
+
+      <h3>Penyebab Gigi Berlubang</h3>
+
+      <ol>
+        <li>
+          <h4>Penumpukan Plak Gigi</h4>
+          <p>Plak adalah lapisan lengket yang berisi bakteri...</p>
+        </li>
+
+        <li>
+          <h4>Konsumsi Makanan dan Minuman Manis</h4>
+
+          <ul>
+            <li>Permen</li>
+            <li>Cokelat</li>
+            <li>Kue</li>
+            <li>Minuman bersoda</li>
+            <li>Minuman kemasan</li>
+          </ul>
+
+          <p>Menjadi sumber makanan bagi bakteri penyebab karies.</p>
+        </li>
+
+        <li>
+          <h4>Kebersihan Mulut yang Buruk</h4>
+          <p>Tidak menyikat gigi secara teratur...</p>
+        </li>
+
+        <li>
+          <h4>Kurangnya Fluoride</h4>
+          <p>Fluoride membantu memperkuat email gigi...</p>
+        </li>
+
+        <li>
+          <h4>Mulut Kering (Xerostomia)</h4>
+          <p>Air liur berfungsi membersihkan sisa makanan...</p>
+        </li>
+
+        <li>
+          <h4>Kebiasaan Mengemil Terlalu Sering</h4>
+          <p>Semakin sering mengonsumsi makanan manis...</p>
+        </li>
+      </ol>
+
+      <h3>Faktor Risiko Gigi Berlubang</h3  >
+
+      <ul>
+        <li>Usia anak-anak dan lansia</li>
+        <li>Konsumsi gula berlebihan</li>
+        <li>Kurangnya pemeriksaan gigi rutin</li>
+        <li>Penggunaan kawat gigi tanpa perawatan yang baik</li>
+        <li>Kebiasaan tidur sambil minum susu pada anak</li>
+        <li>Riwayat karies sebelumnya</li>
+        <li>Penyakit tertentu yang menyebabkan mulut kering</li>
+      </ul>
+
+      <h3>Tahapan Terjadinya Gigi Berlubang</h3>
+
+      <ul>
+        <li><strong>Tahap 1: Demineralisasi Awal</strong></li>
+        <li><strong>Tahap 2: Kerusakan Email</strong></li>
+        <li><strong>Tahap 3: Kerusakan Dentin</strong></li>
+        <li><strong>Tahap 4: Kerusakan Pulpa</strong></li>
+        <li><strong>Tahap 5: Abses Gigi</strong></li>
+      </ul>
+      <h3>Gejala Gigi Berlubang</h3>
+
+      <h4>Gejala Awal</h4>
+      <ul>
+        <li>Muncul bercak putih atau cokelat</li>
+        <li>Sensitif terhadap makanan manis</li>
+        <li>Sensitif terhadap dingin atau panas</li>
+      </ul>
+
+      <h4>Gejala Lanjut</h4>
+      <ul>
+        <li>Nyeri gigi</li>
+        <li>Lubang terlihat jelas</li>
+        <li>Makanan mudah tersangkut</li>
+        <li>Bau mulut</li>
+      </ul>
+
+      <h4>Gejala Berat</h4>
+      <ul>
+        <li>Nyeri berdenyut terus-menerus</li>
+        <li>Bengkak pada gusi atau wajah</li>
+        <li>Keluar nanah</li>
+        <li>Demam akibat infeksi</li>
+      </ul>
+
+      <h3>Dampak Gigi Berlubang</h3>
+
+      <ul>
+        <li>
+          <h4>Gangguan Mengunyah</h4>
+          <p>Nyeri saat makan dapat menyebabkan penurunan nafsu makan.</p>
+        </li>
+
+        <li>
+          <h4>Gangguan Bicara</h4>
+          <p>Kehilangan gigi dapat memengaruhi pelafalan kata.</p>
+        </li>
+
+        <li>
+          <h4>Infeksi</h4>
+          <p>Infeksi dapat menyebar ke jaringan sekitar.</p>
+        </li>
+
+        <li>
+          <h4>Menurunnya Kualitas Hidup</h4>
+          <p>Rasa sakit dan ketidaknyamanan dapat mengganggu aktivitas.</p>
+        </li>
+
+        <li>
+          <h4>Masalah pada Anak</h4>
+          <ul>
+            <li>Gangguan pertumbuhan</li>
+            <li>Kesulitan belajar</li>
+            <li>Penurunan konsentrasi</li>
+            <li>Gangguan status gizi</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Cara Mencegah Gigi Berlubang</h3>
+      <ul>
+        <li>Menyikat Gigi Dua Kali Sehari</li>
+        <li>Membersihkan Sela Gigi</li>
+        <li>Mengurangi Konsumsi Gula</li>
+        <li>Minum Air Putih yang Cukup</li>
+        <li>Pemeriksaan Gigi Rutin</li>
+        <li>Aplikasi Fluoride</li>
+        <li>Fissure Sealant</li>
+      </ul>
+
+      <h3>Pengobatan Gigi Berlubang</h3>
+
+      <ul>
+        <li>Penambalan Gigi</li>
+        <li>Perawatan Saluran Akar</li>
+        <li>Pemasangan Mahkota Gigi (Crown)</li>
+        <li>Pencabutan Gigi</li>
+      </ul>
+
+      <h3>Kapan Harus ke Dokter Gigi?</h3>
+
+      <ul>
+        <li>Nyeri gigi yang tidak hilang</li>
+        <li>Sensitif berlebihan terhadap panas atau dingin</li>
+        <li>Gusi bengkak</li>
+        <li>Keluar nanah dari gusi</li>
+        <li>Lubang gigi yang semakin besar</li>
+        <li>Kesulitan mengunyah</li>
+      </ul>
+
+      <p>
+        Deteksi dan penanganan dini dapat mencegah kerusakan yang lebih parah.
+      </p>
+
+      <div class="callout">
+        <p>🎯 <strong>Kesimpulan:</strong>  Gigi berlubang merupakan masalah kesehatan gigi dan mulut yang umum terjadi dan dapat dialami oleh semua kelompok usia. Kondisi ini disebabkan oleh aktivitas bakteri yang mengubah sisa makanan, terutama yang mengandung gula, menjadi asam yang merusak jaringan gigi secara bertahap. Jika tidak ditangani, gigi berlubang dapat menimbulkan nyeri, infeksi, gangguan mengunyah, hingga kehilangan gigi. Oleh karena itu, menjaga kebersihan mulut dengan menyikat gigi secara teratur, membatasi konsumsi makanan manis, menggunakan fluoride, serta melakukan pemeriksaan gigi secara rutin merupakan langkah penting untuk mencegah terjadinya karies. Deteksi dan penanganan sejak dini dapat membantu menjaga kesehatan gigi dan meningkatkan kualitas hidup secara keseluruhan.</p>
+      </div>
+      </div>
+    </div>
+
 
     <!-- ARTIKEL LAIN -->
-    <div class="section-label">Artikel Peminatan Lainnya</div>
-    <div class="article-grid">
+    <!-- <div class="section-label">Artikel Peminatan Lainnya</div> -->
+    <!-- <div class="article-grid">
       <div class="article-card">
         <div class="icon-wrap">🦠</div>
         <span class="article-cat">Karies Preventif</span>
@@ -596,21 +823,13 @@
         <h3>Daun Sirih hingga Propolis: Warisan Lokal untuk Gigi Sehat</h3>
         <p>Penelitian menunjukkan ekstrak sirih dan propolis lebah hutan Sumsel memiliki aktivitas antibakteri terhadap Streptococcus mutans penyebab karies.</p>
       </div>
-    </div>
+    </div> -->
 
   </main>
 
   <!-- SIDEBAR: WIDGETS -->
   <aside class="sidebar">
 
-    <!-- 1. SEARCH -->
-    <div class="widget">
-      <div class="widget-title">🔍 Cari Artikel</div>
-      <div class="search-box">
-        <input type="text" placeholder="Cari kesgilut..." id="searchInput">
-        <button onclick="doSearch()">Cari</button>
-      </div>
-    </div>
 
     <!-- 2. CLOCK & DATE -->
     <div class="widget">
@@ -619,20 +838,6 @@
       <div class="date-display" id="dateDisplay">Memuat...</div>
     </div>
 
-    <!-- 3. VISITOR COUNTER -->
-    <!-- <div class="widget">
-      <div class="widget-title">📊 Statistik Pengunjung</div>
-      <div class="counter-display">
-        <span class="counter-num" id="visitorCount">3,847</span>
-        <span class="counter-label">Total Kunjungan</span>
-      </div>
-      <div class="counter-stats">
-        <div class="counter-stat"><span class="val" id="todayCount">47</span><span class="lbl">Hari Ini</span></div>
-        <div class="counter-stat"><span class="val">128</span><span class="lbl">Minggu Ini</span></div>
-        <div class="counter-stat"><span class="val">512</span><span class="lbl">Bulan Ini</span></div>
-        <div class="counter-stat"><span class="val">6</span><span class="lbl">Online Kini</span></div>
-      </div>
-    </div> -->
 
     <!-- 4. CALENDAR -->
     <div class="widget">
@@ -645,26 +850,6 @@
       <div class="cal-grid" id="calGrid"></div>
     </div>
 
-    <!-- 5. CLOUD TAG
-    <div class="widget">
-      <div class="widget-title">🏷️ Tag Cloud</div>
-      <div class="tag-cloud">
-        <a href="#" class="cloud-tag lg">Karies</a>
-        <a href="#" class="cloud-tag">Stunting</a>
-        <a href="#" class="cloud-tag lg">Periodontal</a>
-        <a href="#" class="cloud-tag sm">JKN</a>
-        <a href="#" class="cloud-tag">Fluoride</a>
-        <a href="#" class="cloud-tag lg">Ibu Hamil</a>
-        <a href="#" class="cloud-tag sm">UKGS</a>
-        <a href="#" class="cloud-tag">Puskesmas</a>
-        <a href="#" class="cloud-tag">Scalling</a>
-        <a href="#" class="cloud-tag sm">ANC</a>
-        <a href="#" class="cloud-tag">Herbal</a>
-        <a href="#" class="cloud-tag lg">Pencegahan</a>
-        <a href="#" class="cloud-tag sm">Posyandu</a>
-        <a href="#" class="cloud-tag">BPJS Gigi</a>
-      </div>
-    </div> -->
 
     <!-- 6. BLOG ROLL -->
     <div class="widget">
@@ -678,42 +863,6 @@
       </ul>
     </div>
 
-    <!-- 7. RECENT ARTICLES -->
-    <!-- <div class="widget">
-      <div class="widget-title">📰 Artikel Terbaru</div>
-      <div class="recent-list">
-        <div class="recent-item">
-          <div class="recent-ico">🦷</div>
-          <div class="recent-text"><h4>Program ANC Gigi Wajib untuk Ibu Hamil</h4><span>12 Juni 2026</span></div>
-        </div>
-        <div class="recent-item">
-          <div class="recent-ico">📱</div>
-          <div class="recent-text"><h4>Telekonsultasi Gigi di Era Digital</h4><span>8 Juni 2026</span></div>
-        </div>
-        <div class="recent-item">
-          <div class="recent-ico">🌿</div>
-          <div class="recent-text"><h4>Bebas Amalgam: Saatnya Beralih ke GIC</h4><span>3 Juni 2026</span></div>
-        </div>
-        <div class="recent-item">
-          <div class="recent-ico">👶</div>
-          <div class="recent-text"><h4>UKGS PAUD: Deteksi Dini Karies Balita</h4><span>27 Mei 2026</span></div>
-        </div>
-      </div>
-    </div> -->
-
-    <!-- 8. TRANSLATE -->
-    <div class="widget">
-      <div class="widget-title">🌐 Terjemahkan</div>
-      <select class="translate-select" onchange="translatePage(this.value)">
-        <option value="">Pilih Bahasa...</option>
-        <option value="en">🇺🇸 English</option>
-        <option value="ar">🇸🇦 العربية</option>
-        <option value="zh">🇨🇳 中文</option>
-        <option value="ms">🇲🇾 Bahasa Melayu</option>
-        <option value="ja">🇯🇵 日本語</option>
-      </select>
-      <div id="translate-element" style="margin-top:.5rem;"></div>
-    </div>
 
     <!-- 9. GOOGLE MAP -->
     <div class="widget">

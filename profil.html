@@ -33,7 +33,7 @@
   /* avatar card */
   .profile-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:2.5rem;display:flex;gap:2.5rem;align-items:start;margin-bottom:2rem;}
   @media(max-width:600px){.profile-card{flex-direction:column;align-items:center;text-align:center;}}
-  .avatar{width:140px;height:140px;border-radius:50%;background:linear-gradient(135deg,var(--teal-mid),#085041);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:3.5rem;}
+  .avatar{width:140px;height:140px;border-radius:50%;background:linear-gradient(135deg,var(--teal-mid),#085041);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:3.5rem;background-image:url(profil.jpeg);background-size:cover;background-position:center;background-repeat:no-repeat}
   .profile-info h2{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.25rem;}
   .profile-info .nim{font-size:.82rem;color:var(--text-hint);margin-bottom:1rem;}
   .profile-info p{font-size:.9rem;line-height:1.8;color:var(--text-muted);margin-bottom:1.25rem;}
@@ -79,9 +79,8 @@
 <body>
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="logo">Smile<span>Quest</span></a>
+    <a href="index.html" class="logo">Senyum<span>Ceria</span></a>
     <div class="nav-links">
-      <a href="index.html">Beranda</a>
       <a href="profil.html" class="active">Profil</a>
       <a href="hobby.html">Hobi</a>
       <a href="kesgilut.html">Kesgilut</a>
@@ -90,41 +89,43 @@
 </nav>
 
 <div class="page-hero">
-  <p class="eyebrow">Halaman Statis</p>
+  <p class="eyebrow">Tentang Penulis</p>
   <h1>Profil Penulis & Blog</h1>
-  <p>Mengenal lebih dekat penulis SmileQuest</p>
+  <p>Mengenal lebih dekat penulis blog Senyum Ceria</p>
 </div>
 
 <div class="wrap">
 
   <!-- PROFILE CARD -->
   <div class="profile-card">
-    <div class="avatar">😊</div>
+    <div class="avatar">
+      <!-- <img src="profil.jpeg" alt="" srcset=""> -->
+    </div>
     <div class="profile-info">
       <h2>Nama Lengkap Anda</h2>
-      <p class="nim">NIM: 12345678 &nbsp;·&nbsp; Poltekkes Kemenkes Palembang &nbsp;·&nbsp; D-IV Kesehatan Gigi</p>
-      <p>Saya adalah mahasiswa tingkat akhir Program Studi Sarjana Terapan Kesehatan Gigi (D-IV) di Poltekkes Kemenkes Palembang. Bersemangat dalam mengintegrasikan ilmu kesehatan gigi dengan isu-isu pembangunan kesehatan nasional, terutama pencegahan stunting, kesehatan ibu dan anak, serta penerapan teknologi dalam pelayanan dental primer.</p>
+      <p class="nim">NIM: P1337425225141 &nbsp;·&nbsp; Poltekkes Kemenkes Semarang &nbsp;·&nbsp; D-IV Kesehatan Gigi</p>
+      <p>Saya adalah mahasiswa Program Sarjana Terapan Kesehatan Gigi (D-IV) yang memiliki minat besar dalam bidang kesehatan gigi dan mulut. Selama masa perkuliahan, saya aktif mengembangkan pengetahuan dan keterampilan klinis serta mengikuti berbagai kegiatan yang mendukung pengembangan diri. Melalui blog ini, saya berbagi pengalaman, minat, dan wawasan seputar kesehatan gigi sebagai bagian dari perjalanan saya menjadi tenaga kesehatan yang profesional dan berorientasi pada pelayanan masyarakat.</p>
       <div class="info-grid">
-        <div class="info-item"><div class="lbl">Institusi</div><div class="val">Poltekkes Kemenkes Palembang</div></div>
+        <div class="info-item"><div class="lbl">Institusi</div><div class="val">Poltekkes Kemenkes Semarang</div></div>
         <div class="info-item"><div class="lbl">Program Studi</div><div class="val">D-IV Kesehatan Gigi</div></div>
-        <div class="info-item"><div class="lbl">PKL</div><div class="val">Puskesmas Sukarame, Palembang</div></div>
-        <div class="info-item"><div class="lbl">Angkatan</div><div class="val">2022 (Lulus 2026)</div></div>
+        <div class="info-item"><div class="lbl">Lokasi Kerja</div><div class="val">Asri Dental Clinic, Palembang</div></div>
+        <div class="info-item"><div class="lbl">Angkatan</div><div class="val">2025</div></div>
       </div>
     </div>
   </div>
 
   <!-- BADGES -->
-  <div class="badges">
+  <!-- <div class="badges">
     <span class="badge">🦷 Kesehatan Gigi Promotif</span>
     <span class="badge">👶 Gizi & Stunting</span>
     <span class="badge">📱 Teknologi Kesehatan</span>
     <span class="badge">🌿 Herbal Dental</span>
     <span class="badge">📊 Rekam Medis</span>
     <span class="badge">🏥 Pelayanan Primer</span>
-  </div>
+  </div> -->
 
   <!-- KOMPETENSI -->
-  <div class="skills-section">
+  <!-- <div class="skills-section">
     <h3>Kompetensi Profesional</h3>
     <div class="skill-row">
       <div class="skill-label"><span>Pemeriksaan & Diagnosis Gigi</span><span>90%</span></div>
@@ -146,10 +147,10 @@
       <div class="skill-label"><span>Komunikasi Terapeutik Pasien</span><span>92%</span></div>
       <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
     </div>
-  </div>
+  </div> -->
 
   <!-- TENTANG BLOG -->
-  <div class="blog-about">
+  <!-- <div class="blog-about">
     <h3>🌟 Tentang Blog SmileQuest</h3>
     <p>SmileQuest lahir dari kegelisahan seorang mahasiswa kesehatan gigi yang ingin berbagi pengetahuan lebih luas. Blog ini menjadi ruang untuk memaparkan bagaimana ilmu kesehatan gigi yang selama ini dianggap sempit ternyata menyentuh hampir seluruh aspek kesehatan nasional — dari pencegahan stunting, pengendalian infeksi, hingga keamanan data digital.</p>
     <p>Nama SmileQuest diambil dari semangat bahwa setiap senyum adalah pencapaian — sebuah misi (quest) yang tidak pernah berakhir dalam menjaga kesehatan gigi masyarakat Indonesia.</p>
@@ -158,9 +159,9 @@
       <div class="bstat"><div class="num">4</div><div class="lbl">Halaman</div></div>
       <div class="bstat"><div class="num">6</div><div class="lbl">Isu Strategis</div></div>
     </div>
-  </div>
+  </div> -->
 
-  <!-- VISI MISI -->
+  <!-- VISI MISI
   <div class="vm-section">
     <h3>🎯 Visi Blog</h3>
     <p>Menjadi platform edukasi kesehatan gigi berbahasa Indonesia yang informatif, berbasis bukti, dan relevan dengan tantangan kesehatan nasional.</p>
@@ -171,9 +172,9 @@
       <li>Menjadi jembatan antara praktik klinis di puskesmas dengan kebijakan kesehatan nasional</li>
       <li>Mendorong peningkatan literasi kesehatan gigi di masyarakat Sumatera Selatan dan Indonesia</li>
     </ul>
-  </div>
+  </div> -->
 
-  <!-- FOTO KEGIATAN -->
+  <!-- FOTO KEGIATAN
   <div class="vm-section">
     <h3>📸 Foto Kegiatan PKL</h3>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem;">
@@ -182,12 +183,12 @@
       <div style="background:linear-gradient(135deg,var(--amber-light),#FAC775);border-radius:12px;height:120px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;flex-direction:column;gap:.3rem;"><span>📋</span><span style="font-size:.7rem;color:var(--amber);font-weight:600;">Rekam Medis</span></div>
     </div>
     <p style="font-size:.78rem;color:var(--text-hint);text-align:center;margin-top:.75rem;">Kegiatan PKL di Puskesmas Sukarame, Palembang — 2025/2026</p>
-  </div>
+  </div> -->
 
 </div>
 
 <footer>
-  <div class="fl">SmileQuest</div>
+  <div class="fl">SenyumCeria</div>
   <p>Blog Kesehatan Gigi | <a href="index.html">Beranda</a> · <a href="hobby.html">Hobi</a> · <a href="kesgilut.html">Kesgilut</a></p>
 </footer>
 </body>

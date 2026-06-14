@@ -174,6 +174,62 @@
   .long-article li { font-size:0.87rem; line-height:1.7; color:var(--text-muted); margin-bottom:0.3rem; }
   .callout { background:var(--teal-light); border-left:4px solid var(--teal); border-radius:0 10px 10px 0; padding:1rem 1.25rem; margin:1.5rem 0; }
   .callout p { margin:0; font-size:0.87rem; color:var(--teal); }
+
+  /* ── CLINIC PROFILE ── */
+  .clinic-hero { background:linear-gradient(135deg,var(--teal),#085041); color:white; border-radius:16px; padding:2rem; margin-bottom:1.25rem; display:flex; gap:1.5rem; align-items:center; }
+  .clinic-hero-icon { font-size:3.5rem; flex-shrink:0; }
+  .clinic-hero h2 { font-family:'Playfair Display',serif; font-size:1.5rem; margin-bottom:0.3rem; }
+  .clinic-hero p { opacity:0.8; font-size:0.85rem; line-height:1.6; }
+  .clinic-meta { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.9rem; }
+  .clinic-chip { background:rgba(255,255,255,0.15); border-radius:999px; padding:0.25rem 0.75rem; font-size:0.75rem; display:flex; align-items:center; gap:0.35rem; }
+
+  /* treatment tabs */
+  .tabs { display:flex; gap:0.4rem; margin-bottom:1.25rem; flex-wrap:wrap; }
+  .tab-btn { padding:0.4rem 1rem; border-radius:999px; border:1px solid var(--border); background:var(--surface); font-size:0.8rem; font-weight:500; color:var(--text-muted); cursor:pointer; transition:all .2s; }
+  .tab-btn.active { background:var(--teal); color:white; border-color:var(--teal); }
+  .tab-panel { display:none; }
+  .tab-panel.active { display:block; }
+
+  /* treatment cards */
+  .treatment-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1.5rem; }
+  @media(max-width:560px){ .treatment-grid{grid-template-columns:1fr;} }
+  .treatment-card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem; display:flex; gap:0.9rem; align-items:start; transition:box-shadow .2s; }
+  .treatment-card:hover { box-shadow:0 4px 16px rgba(15,110,86,0.1); }
+  .t-icon { width:42px; height:42px; border-radius:10px; background:var(--teal-light); display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0; }
+  .t-icon.coral { background:var(--coral-light); }
+  .t-icon.amber { background:var(--amber-light); }
+  .t-body h4 { font-size:0.88rem; font-weight:600; margin-bottom:0.2rem; }
+  .t-body p { font-size:0.78rem; color:var(--text-muted); line-height:1.55; }
+  .t-price { font-size:0.72rem; color:var(--teal); font-weight:600; margin-top:0.3rem; display:block; }
+
+  /* facility grid */
+  .facility-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0.85rem; margin-bottom:1.5rem; }
+  @media(max-width:500px){ .facility-grid{grid-template-columns:1fr 1fr;} }
+  .facility-item { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1rem 0.75rem; text-align:center; }
+  .facility-item .f-ico { font-size:1.6rem; margin-bottom:0.4rem; }
+  .facility-item h5 { font-size:0.78rem; font-weight:600; margin-bottom:0.2rem; }
+  .facility-item p { font-size:0.7rem; color:var(--text-muted); line-height:1.4; }
+
+  /* photo gallery */
+  .gallery-section { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:1.5rem; margin-bottom:2rem; }
+  .gallery-section h3 { font-size:1rem; font-weight:600; margin-bottom:1.1rem; }
+  .gallery-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0.75rem; }
+  .gallery-item { border-radius:10px; overflow:hidden; aspect-ratio:4/3; position:relative; cursor:pointer; }
+  .gallery-item .g-img { width:100%; height:100%; object-fit:cover; background:linear-gradient(135deg,var(--teal-light),#9FE1CB); display:flex; align-items:center; justify-content:center; font-size:2.5rem; transition:transform .3s; }
+  .gallery-item:hover .g-img { transform:scale(1.05); }
+  .gallery-item .g-label { position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent,rgba(15,70,56,0.85)); color:white; font-size:0.7rem; font-weight:600; padding:1.25rem 0.6rem 0.5rem; }
+  .gallery-item.tall { grid-row:span 2; }
+  .gallery-item.tall .g-img { height:100%; }
+  /* wide first photo */
+  .gallery-grid .gallery-item:first-child { grid-column:span 2; }
+
+  /* lightbox */
+  .lightbox { position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:999; display:none; align-items:center; justify-content:center; }
+  .lightbox.open { display:flex; }
+  .lightbox-inner { max-width:600px; width:90%; position:relative; }
+  .lightbox-inner .lb-img { width:100%; border-radius:12px; background:linear-gradient(135deg,var(--teal-light),var(--teal-mid)); aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; font-size:5rem; }
+  .lb-cap { color:white; text-align:center; margin-top:0.75rem; font-size:0.85rem; opacity:0.85; }
+  .lb-close { position:absolute; top:-14px; right:-14px; width:32px; height:32px; background:white; border:none; border-radius:50%; font-size:1rem; cursor:pointer; display:flex; align-items:center; justify-content:center; }
 </style>
 </head>
 <body>
@@ -181,9 +237,8 @@
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="logo">Smile<span>Quest</span></a>
+    <a href="index.html" class="logo">Senyum<span>Ceria</span></a>
     <div class="nav-links">
-      <a href="index.html" class="active">Beranda</a>
       <a href="profil.html">Profil</a>
       <a href="hobby.html">Hobi</a>
       <a href="kesgilut.html">Kesgilut</a>
@@ -195,14 +250,14 @@
 <section class="hero">
   <p class="hero-eyebrow">Blog Kesehatan Gigi & Mulut</p>
   <h1>Gigi Sehat,<br><em>Indonesia Kuat</em></h1>
-  <p class="hero-sub">Paparan program dan upaya mahasiswa Sarjana Terapan Kesehatan Gigi dalam mendukung isu-isu strategis pembangunan kesehatan nasional 2026.</p>
+  <p class="hero-sub">Mengenal lebih dekat perjalanan saya sebagai mahasiswa Sarjana Terapan Kesehatan Gigi, mulai dari pengalaman akademik, minat, hobi, hingga keterampilan yang mendukung perkembangan profesional di bidang kesehatan gigi dan mulut.</p>
   <div class="hero-tags">
-    <span class="tag">🦷 Tata Kelola JKN</span>
-    <span class="tag">🦠 Penyakit Menular</span>
-    <span class="tag">🔒 Keamanan Data</span>
-    <span class="tag">🌿 Krisis Lingkungan</span>
-    <span class="tag">🏭 Industri Mandiri</span>
-    <span class="tag">👶 Stunting & AKI</span>
+    <span class="tag">🦷 Kesehatan Gigi & Mulut</span>
+    <span class="tag">🎓 Mahasiswi Kesehatan Gigi</span>
+    <span class="tag">📚 Edukasi Kesehatan</span>
+    <span class="tag">🪥 Pencegahan Karies</span>
+    <span class="tag">💙 Promosi Kesehatan</span>
+    <span class="tag">🌟 Pengembangan Diri</span>
   </div>
 </section>
 
@@ -211,18 +266,222 @@
   <!-- LEFT: CONTENT -->
   <main>
 
-    <!-- PROFIL PUSKESMAS -->
-    <div class="section-label">Profil Tempat Praktek</div>
-    <div class="puskesmas-block" style="margin-bottom:2rem;">
-      <h2>🏥 Puskesmas Sukarame, Palembang</h2>
-      <p class="subtitle">Tempat Praktek Kerja Lapangan — Pelayanan Kesehatan Gigi & Mulut</p>
-      <div class="service-list">
-        <div class="service-item"><span class="ico">🦷</span><div><strong>Pemeriksaan & Konsultasi</strong><br>Senin–Sabtu, 08.00–12.00 WIB</div></div>
-        <div class="service-item"><span class="ico">💉</span><div><strong>Pencabutan Gigi</strong><br>Gigi sulung & gigi dewasa</div></div>
-        <div class="service-item"><span class="ico">🔧</span><div><strong>Penambalan Gigi</strong><br>GIC, Komposit, Amalgam</div></div>
-        <div class="service-item"><span class="ico">🧹</span><div><strong>Scalling & Kebersihan</strong><br>Pembersihan karang gigi</div></div>
-        <div class="service-item"><span class="ico">👶</span><div><strong>UKGS Sekolah</strong><br>Skrining dan penyuluhan</div></div>
-        <div class="service-item"><span class="ico">📋</span><div><strong>Sistem Informasi</strong><span style="opacity:.7"> P-Care BPJS terintegrasi</span></div></div>
+    <!-- ══ PROFIL KLINIK LENGKAP ══ -->
+    <div class="section-label">Profil Klinik</div>
+
+    <!-- Hero klinik -->
+    <div class="clinic-hero">
+      <div class="clinic-hero-icon">🏥</div>
+      <div>
+        <h2>Asri Dental Clinic</h2>
+        <p>Klinik Gigi & Mulut terpercaya di Palembang dengan tenaga profesional berpengalaman, peralatan modern, dan pelayanan yang ramah. Kami berkomitmen memberikan senyum terbaik untuk setiap pasien.</p>
+        <div class="clinic-meta">
+          <span class="clinic-chip">📍 Jl. Sukabangun 2, Palembang</span>
+          <span class="clinic-chip">🕐 Senin–Minggu 09.00–20.00</span>
+          <span class="clinic-chip">📞 (0881) 805-6161</span>
+          <span class="clinic-chip">✅ Umum</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab navigasi -->
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('treatment',this)">🦷 Treatment</button>
+      <button class="tab-btn" onclick="switchTab('fasilitas',this)">🏨 Fasilitas</button>
+      <button class="tab-btn" onclick="switchTab('foto',this)">📷 Foto Klinik</button>
+    </div>
+
+    <!-- TAB: TREATMENT -->
+    <div class="tab-panel active" id="tab-treatment">
+      <div class="treatment-grid">
+
+        <div class="treatment-card">
+          <div class="t-icon">🔍</div>
+          <div class="t-body">
+            <h4>Pemeriksaan & Konsultasi</h4>
+            <p>Pemeriksaan menyeluruh kondisi gigi, gusi, dan jaringan mulut. Termasuk konsultasi rencana perawatan.</p>
+          </div>
+        </div>
+
+        <div class="treatment-card">
+          <div class="t-icon">🔧</div>
+          <div class="t-body">
+            <h4>Penambalan Gigi</h4>
+            <p>Restorasi karies dengan bahan GIC, komposit sewarna gigi, atau amalgam. Estetis dan tahan lama.</p>
+          </div>
+        </div>
+
+        <div class="treatment-card">
+          <div class="t-icon coral">💉</div>
+          <div class="t-body">
+            <h4>Pencabutan Gigi</h4>
+            <p>Pencabutan gigi sulung anak maupun gigi dewasa dengan anestesi lokal. Aman dan minim rasa sakit.</p>
+          </div>
+        </div>
+
+        <div class="treatment-card">
+          <div class="t-icon">🧹</div>
+          <div class="t-body">
+            <h4>Scalling (Karang Gigi)</h4>
+            <p>Pembersihan karang gigi dan plak dengan ultrasonic scaler. Mencegah periodontitis dan bau mulut.</p>
+          </div>
+        </div>
+
+        <div class="treatment-card">
+          <div class="t-icon amber">🦷</div>
+          <div class="t-body">
+            <h4>Perawatan Saluran Akar (PSA)</h4>
+            <p>Perawatan endodontik untuk gigi dengan infeksi pulpa. Menyelamatkan gigi dari pencabutan.</p>
+          </div>
+        </div>
+
+        <div class="treatment-card">
+          <div class="t-icon amber">✨</div>
+          <div class="t-body">
+            <h4>Bleaching / Pemutihan Gigi</h4>
+            <p>Pemutihan gigi profesional di klinik maupun take-home kit. Hasil cerah hingga 5–8 shade lebih terang.</p>
+          </div>
+        </div>
+
+        <div class="treatment-card">
+          <div class="t-icon coral">👑</div>
+          <div class="t-body">
+            <h4>Mahkota & Jembatan (Crown & Bridge)</h4>
+            <p>Restorasi protesa cekat dari bahan porcelain fused metal atau all-ceramic untuk estetika optimal.</p>
+          </div>
+        </div>
+
+        <div class="treatment-card">
+          <div class="t-icon">👶</div>
+          <div class="t-body">
+            <h4>Perawatan Gigi Anak</h4>
+            <p>Penambalan SSC (stainless steel crown), aplikasi fluor varnish, dan edukasi sikat gigi untuk si kecil.</p>
+          </div>
+        </div>
+
+        <div class="treatment-card">
+          <div class="t-icon amber">🔩</div>
+          <div class="t-body">
+            <h4>Pemasangan Kawat Gigi</h4>
+            <p>Ortodonti cekat (bracket metal/ceramic) untuk merapikan susunan gigi. Konsultasi orthodontist tersedia.</p>
+          </div>
+        </div>
+
+        <div class="treatment-card">
+          <div class="t-icon coral">🪮</div>
+          <div class="t-body">
+            <h4>Gigi Palsu (Denture)</h4>
+            <p>Protesa lepasan akrilik maupun flexi untuk menggantikan gigi yang hilang. Nyaman dan natural.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- TAB: FASILITAS -->
+    <div class="tab-panel" id="tab-fasilitas">
+      <div class="facility-grid">
+
+        <div class="facility-item">
+          <div class="f-ico">📺</div>
+          <h5>Ruang Tunggu Nyaman</h5>
+          <p>AC, TV, WiFi gratis, dan minuman untuk pasien</p>
+        </div>
+
+        <div class="facility-item">
+          <div class="f-ico">👶</div>
+          <h5>Area Bermain anak</h5>
+          <p>Fasilitas bermain yang aman dan edukatif untuk membantu anak merasa lebih nyaman sebelum perawatan.</p>
+        </div>
+
+        <div class="facility-item">
+          <div class="f-ico">📱</div>
+          <h5>Sistem Antrian Digital</h5>
+          <p>Pendaftaran online via gform</p>
+        </div>
+
+        <div class="facility-item">
+          <div class="f-ico">🅿️</div>
+          <h5>Area Parkir Luas</h5>
+          <p>Parkir gratis untuk motor & mobil pasien</p>
+        </div>
+
+        <div class="facility-item">
+          <div class="f-ico">🦷</div>
+          <h5>Ruang Perawatan Gigi Modern</h5>
+          <p>Dilengkapi dental unit dan peralatan terkini untuk menunjang pelayanan kesehatan gigi yang optimal.</p>
+        </div>
+
+        <div class="facility-item">
+          <div class="f-ico">🕌</div>
+          <h5>Mushola</h5>
+          <p>Tersedia tempat ibadah yang bersih dan nyaman bagi pasien maupun pendamping selama berada di klinik.</p>
+        </div>
+
+      </div>
+
+      <!-- Jam operasional -->
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.25rem;margin-bottom:1.5rem;">
+        <h4 style="font-size:0.9rem;font-weight:600;margin-bottom:1rem;">🕐 Jam Operasional</h4>
+        <table style="width:100%;font-size:0.83rem;border-collapse:collapse;">
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.5rem 0;color:var(--text-muted);">Senin – Jumat</td><td style="text-align:right;font-weight:600;">09.00 – 20.00 WIB</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.5rem 0;color:var(--text-muted);">Sabtu - Minggu</td><td style="text-align:right;font-weight:600;">09.00 – 13.00 WIB</td></tr>
+          <tr><td style="padding:0.5rem 0;color:var(--text-muted);">Hari Libur Nasional</td><td style="text-align:right;color:var(--coral);font-weight:600;">Tutup</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB: FOTO KLINIK -->
+    <div class="tab-panel" id="tab-foto">
+      <div class="gallery-section" style="border:none;padding:0;background:transparent;">
+        <div class="gallery-grid">
+
+          <!-- Foto 1: wide (span 2) -->
+          <div class="gallery-item" onclick="openLightbox(0)">
+            <div class="g-img" style="background:linear-gradient(135deg,#0F6E56,#1D9E75);">
+              <img src="img/depan.jpeg" alt="" srcset="" style="width: 100%;height:100%;">
+            </div>
+          </div>
+
+          <!-- Foto 2 -->
+          <div class="gallery-item" onclick="openLightbox(1)">
+            <div class="g-img" style="background:linear-gradient(135deg,#E1F5EE,#9FE1CB);">
+              <img src="img/dental.jpeg" alt="" srcset="" style="width: 100%;height:100%;">
+            </div>
+          </div>
+
+          <!-- Foto 3 -->
+          <div class="gallery-item" onclick="openLightbox(2)">
+            <div class="g-img" style="background:linear-gradient(135deg,#FAEEDA,#FAC775);">
+              <img src="img/ruang-tunggu.jpeg" alt="" srcset="" style="width: 100%;height:100%;">
+            </div>
+          </div>
+
+          <!-- Foto 4 -->
+           <div class="gallery-item" onclick="openLightbox(3)">
+            <div class="g-img" style="background:linear-gradient(135deg,#FAEEDA,#FAC775);">
+              <img src="img/dental2.jpeg" alt="" srcset="" style="width: 100%;height:100%;">
+            </div>
+          </div><!-- Foto 4 -->
+
+           <div class="gallery-item" onclick="openLightbox(4)">
+            <div class="g-img" style="background:linear-gradient(135deg,#FAEEDA,#FAC775);">
+              <img src="img/dental3.jpeg" alt="" srcset="" style="width: 100%;height:100%;">
+            </div>
+          </div>
+
+        </div>
+        <p style="font-size:0.75rem;color:var(--text-hint);text-align:center;margin-top:0.75rem;">Klik foto untuk memperbesar · Ganti dengan foto asli klinik Anda</p>
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <div class="lightbox-inner" onclick="event.stopPropagation()">
+        <button class="lb-close" onclick="closeLightbox()">✕</button>
+        <div class="lb-img" id="lb-img">🏥</div>
+        <div class="lb-cap" id="lb-cap">Tampak Depan Klinik</div>
       </div>
     </div>
 
@@ -309,51 +568,6 @@
       </div>
     </div>
 
-    <!-- ISU STRATEGIS TABLE -->
-    <div class="section-label">Ringkasan Program</div>
-    <div class="isu-block">
-      <table>
-        <thead>
-          <tr>
-            <th>Isu Strategis</th>
-            <th>Program Kesgilut</th>
-            <th>Sasaran</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span class="isu-badge badge-teal">JKN</span> Tata Kelola Jaminan</td>
-            <td>Optimalisasi P-Care & edukasi hak JKN gigi</td>
-            <td>Peserta JKN</td>
-          </tr>
-          <tr>
-            <td><span class="isu-badge badge-coral">Menular</span> Penyakit Infeksi</td>
-            <td>Skrining oral TB/HIV, sterilisasi standar</td>
-            <td>Pasien risiko tinggi</td>
-          </tr>
-          <tr>
-            <td><span class="isu-badge badge-teal">Digital</span> Keamanan Data</td>
-            <td>Rekam medis terenkripsi, pelatihan literasi data</td>
-            <td>Tenaga & Faskes</td>
-          </tr>
-          <tr>
-            <td><span class="isu-badge badge-amber">Lingkungan</span> Krisis Global</td>
-            <td>Bebas amalgam, siwak, pengelolaan limbah dental</td>
-            <td>Masyarakat umum</td>
-          </tr>
-          <tr>
-            <td><span class="isu-badge badge-coral">Industri</span> Kemandirian</td>
-            <td>Preferensi produk lokal, riset herbal dental</td>
-            <td>Industri & Pemerintah</td>
-          </tr>
-          <tr>
-            <td><span class="isu-badge badge-teal">Stunting</span> Ibu & Anak</td>
-            <td>ANC Gigi wajib, UKGS PAUD, edukasi Posyandu</td>
-            <td>Bumil, Balita, Kader</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
 
     <!-- ARTIKEL LAIN -->
     <div class="section-label">Artikel Peminatan Lainnya</div>
@@ -406,7 +620,7 @@
     </div>
 
     <!-- 3. VISITOR COUNTER -->
-    <div class="widget">
+    <!-- <div class="widget">
       <div class="widget-title">📊 Statistik Pengunjung</div>
       <div class="counter-display">
         <span class="counter-num" id="visitorCount">3,847</span>
@@ -418,7 +632,7 @@
         <div class="counter-stat"><span class="val">512</span><span class="lbl">Bulan Ini</span></div>
         <div class="counter-stat"><span class="val">6</span><span class="lbl">Online Kini</span></div>
       </div>
-    </div>
+    </div> -->
 
     <!-- 4. CALENDAR -->
     <div class="widget">
@@ -431,7 +645,7 @@
       <div class="cal-grid" id="calGrid"></div>
     </div>
 
-    <!-- 5. CLOUD TAG -->
+    <!-- 5. CLOUD TAG
     <div class="widget">
       <div class="widget-title">🏷️ Tag Cloud</div>
       <div class="tag-cloud">
@@ -450,7 +664,7 @@
         <a href="#" class="cloud-tag sm">Posyandu</a>
         <a href="#" class="cloud-tag">BPJS Gigi</a>
       </div>
-    </div>
+    </div> -->
 
     <!-- 6. BLOG ROLL -->
     <div class="widget">
@@ -465,7 +679,7 @@
     </div>
 
     <!-- 7. RECENT ARTICLES -->
-    <div class="widget">
+    <!-- <div class="widget">
       <div class="widget-title">📰 Artikel Terbaru</div>
       <div class="recent-list">
         <div class="recent-item">
@@ -485,7 +699,7 @@
           <div class="recent-text"><h4>UKGS PAUD: Deteksi Dini Karies Balita</h4><span>27 Mei 2026</span></div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- 8. TRANSLATE -->
     <div class="widget">
@@ -503,28 +717,13 @@
 
     <!-- 9. GOOGLE MAP -->
     <div class="widget">
-      <div class="widget-title">📍 Lokasi Puskesmas</div>
+      <div class="widget-title">📍 Lokasi Klinik</div>
       <div class="map-placeholder">
         <span class="map-icon">🗺️</span>
-        <p>Puskesmas Sukarame<br>Palembang, Sumatera Selatan</p>
+        <p>Asri Dental Clinic<br>Palembang, Sumatera Selatan</p>
       </div>
-      <p style="font-size:.72rem;color:var(--text-hint);margin-top:.5rem;text-align:center;">Jl. Sukarame, Palembang 30153</p>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31882.408703424073!2d104.74535!3d-2.9900!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b755e31beeda5%3A0x84f3c6a4a5dbfaec!2sSukarame%2C%20Palembang!5e0!3m2!1sid!2sid!4v1234567890" width="100%" height="140" style="border:0;border-radius:8px;margin-top:.5rem;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-
-    <!-- 10. CHAT -->
-    <div class="widget">
-      <div class="widget-title">💬 Chat dengan Kami</div>
-      <div class="chat-widget">
-        <div class="chat-header">🦷 SmileQuest Chat</div>
-        <div class="chat-messages" id="chatMessages">
-          <div class="chat-msg bot">Halo! Ada pertanyaan seputar kesehatan gigi? Kami siap membantu 😊</div>
-        </div>
-        <div class="chat-input-row">
-          <input type="text" placeholder="Tulis pesan..." id="chatInput" onkeydown="if(event.key==='Enter')sendChat()">
-          <button onclick="sendChat()">Kirim</button>
-        </div>
-      </div>
+      <p style="font-size:.72rem;color:var(--text-hint);margin-top:.5rem;text-align:center;">Jl. Sukabangun 2, Palembang</p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.552116341113!2d104.72818267529321!3d-2.944134797032127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b7606cba0ad3f%3A0x3710900a3135c068!2sAsri%20Dental%20Clinic%20%7C%20Dokter%20Gigi%20Palembang%20%7C%20drg.Rina%20Meiliyanawaty%2C%20M.Kes.%2C%20Sp.Perio!5e0!3m2!1sen!2sid!4v1781442200427!5m2!1sen!2sid" width="100%" height="140" style="border:0;border-radius:8px;margin-top:.5rem;" allowfullscreen="" loading="lazy"></iframe>
     </div>
 
   </aside>
@@ -532,10 +731,10 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">SmileQuest</div>
-  <p>Blog Kesehatan Gigi & Mulut — Sarjana Terapan Kesehatan<br>
-  Poltekkes Kemenkes Palembang &nbsp;|&nbsp; <a href="#">profil.html</a> &nbsp;|&nbsp; <a href="#">hobby.html</a> &nbsp;|&nbsp; <a href="#">kesgilut.html</a></p>
-  <p style="margin-top:.75rem;font-size:.75rem;opacity:.5;">© 2026 SmileQuest — Dibuat sebagai ujian praktek</p>
+  <div class="footer-logo">SenyumCeria</div>
+  <p>Blog Kesehatan Gigi & Mulut — Sarjana Terapan Kesehatan Gigi<br>
+  Poltekkes Kemenkes Semarang &nbsp;|&nbsp; <a href="profil.html">Profil</a> &nbsp;|&nbsp; <a href="hobby.html">Hobby</a> &nbsp;|&nbsp; <a href="kesgilut.html">Kesgilut</a></p>
+  <p style="margin-top:.75rem;font-size:.75rem;opacity:.5;">© 2026 SenyumCeria — Dibuat dengan sepenuh hati</p>
 </footer>
 
 <script>
@@ -620,6 +819,24 @@ function translatePage(lang){
   const urls = {en:'?hl=en',ar:'?hl=ar',zh:'?hl=zh-CN',ms:'?hl=ms',ja:'?hl=ja'};
   const tUrl = `https://translate.google.com/translate?sl=id&tl=${lang}&u=${encodeURIComponent(window.location.href)}`;
   window.open(tUrl,'_blank');
+}
+
+function switchTab(tabId, clickedBtn) {
+  // Sembunyikan semua panel
+  document.querySelectorAll('.tab-panel').forEach(panel => {
+    panel.classList.remove('active');
+  });
+
+  // Nonaktifkan semua tombol
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+
+  // Tampilkan panel yang dipilih
+  document.getElementById(`tab-${tabId}`).classList.add('active');
+
+  // Aktifkan tombol yang diklik
+  clickedBtn.classList.add('active');
 }
 </script>
 </body>

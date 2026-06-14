@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hobi — SmileQuest</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--teal:#0F6E56;--teal-light:#E1F5EE;--teal-mid:#1D9E75;--coral:#D85A30;--coral-light:#FAECE7;--amber:#BA7517;--amber-light:#FAEEDA;--text:#2C2C2A;--text-muted:#5F5E5A;--text-hint:#888780;--bg:#F8FDFB;--surface:#ffffff;--border:rgba(15,110,86,0.15);}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);}
+  nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
+  .nav-inner{max-width:1100px;margin:auto;padding:0 1.5rem;display:flex;align-items:center;gap:2rem;height:64px;}
+  .logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--teal);font-weight:700;text-decoration:none;}
+  .logo span{color:var(--coral);}
+  nav a{color:var(--text-muted);text-decoration:none;font-size:.875rem;font-weight:500;padding:.35rem .7rem;border-radius:6px;transition:all .2s;}
+  nav a:hover,nav a.active{background:var(--teal-light);color:var(--teal);}
+  .nav-links{display:flex;gap:.25rem;margin-left:auto;}
+  .page-hero{background:linear-gradient(135deg,#FAEEDA,#F8FDFB,#E1F5EE);padding:3rem 1.5rem;text-align:center;}
+  .page-hero .eyebrow{font-size:.72rem;font-weight:600;letter-spacing:2px;color:var(--amber);text-transform:uppercase;margin-bottom:.75rem;}
+  .page-hero h1{font-family:'Playfair Display',serif;font-size:2.5rem;margin-bottom:.5rem;}
+  .page-hero p{color:var(--text-muted);font-size:.95rem;}
+  .wrap{max-width:860px;margin:3rem auto;padding:0 1.5rem;}
+  .section-label{font-size:.7rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--teal-mid);margin-bottom:1.5rem;padding-bottom:.5rem;border-bottom:2px solid var(--teal-light);}
+
+  /* hobby cards */
+  .hobby-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2.5rem;}
+  @media(max-width:560px){.hobby-grid{grid-template-columns:1fr;}}
+  .hobby-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:transform .2s,box-shadow .2s;}
+  .hobby-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(15,110,86,0.1);}
+  .hobby-img{height:140px;display:flex;align-items:center;justify-content:center;font-size:4rem;}
+  .hobby-body{padding:1.25rem;}
+  .hobby-body h3{font-size:1.05rem;font-weight:700;margin-bottom:.4rem;}
+  .hobby-body p{font-size:.83rem;color:var(--text-muted);line-height:1.7;}
+  .hobby-tag{display:inline-block;font-size:.68rem;font-weight:600;padding:.2rem .6rem;border-radius:999px;margin-bottom:.5rem;}
+
+  /* connection to dental */
+  .connection-block{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem;margin-bottom:2rem;}
+  .connection-block h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--teal);margin-bottom:1rem;}
+  .conn-list{display:flex;flex-direction:column;gap:.75rem;}
+  .conn-item{display:flex;gap:1rem;align-items:start;padding:.9rem;background:var(--teal-light);border-radius:10px;}
+  .conn-item .ico{font-size:1.4rem;flex-shrink:0;}
+  .conn-item p{font-size:.85rem;line-height:1.6;color:var(--teal);}
+  .conn-item strong{display:block;font-size:.9rem;margin-bottom:.2rem;}
+
+  /* gallery */
+  .gallery-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem;}
+  .gallery-item{border-radius:12px;height:110px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.35rem;font-size:2.2rem;}
+  .gallery-label{font-size:.72rem;font-weight:600;}
+
+  footer{background:var(--text);color:#B4B2A9;text-align:center;padding:2rem 1.5rem;margin-top:4rem;}
+  footer .fl{font-family:'Playfair Display',serif;font-size:1.3rem;color:white;margin-bottom:.5rem;}
+  footer p{font-size:.8rem;}
+  footer a{color:var(--teal-mid);text-decoration:none;}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Smile<span>Quest</span></a>
+    <div class="nav-links">
+      <a href="index.html">Beranda</a>
+      <a href="profil.html">Profil</a>
+      <a href="hobby.html" class="active">Hobi</a>
+      <a href="kesgilut.html">Kesgilut</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <p class="eyebrow">Halaman Statis</p>
+  <h1>Hobi & Minat Saya</h1>
+  <p>Kegiatan di luar kampus yang mengisi energi dan menginspirasi</p>
+</div>
+
+<div class="wrap">
+
+  <div class="section-label">Hobi Utama</div>
+  <div class="hobby-grid">
+    <div class="hobby-card">
+      <div class="hobby-img" style="background:linear-gradient(135deg,#E1F5EE,#9FE1CB);">📚</div>
+      <div class="hobby-body">
+        <span class="hobby-tag" style="background:var(--teal-light);color:var(--teal);">Edukatif</span>
+        <h3>Membaca & Literasi Kesehatan</h3>
+        <p>Membaca jurnal kesehatan gigi, buku nutrisi anak, dan artikel kebijakan kesehatan nasional. Hobi ini langsung memperkaya wawasan akademis dan klinis saya sebagai calon tenaga kesehatan.</p>
+      </div>
+    </div>
+    <div class="hobby-card">
+      <div class="hobby-img" style="background:linear-gradient(135deg,#FAEEDA,#FAC775);">🏃‍♀️</div>
+      <div class="hobby-body">
+        <span class="hobby-tag" style="background:var(--amber-light);color:var(--amber);">Olahraga</span>
+        <h3>Jogging & Senam Pagi</h3>
+        <p>Rutin jogging 3-4x seminggu di kawasan Jakabaring Palembang. Olahraga aerobik terbukti meningkatkan aliran saliva dan menjaga kesehatan jaringan periodontal.</p>
+      </div>
+    </div>
+    <div class="hobby-card">
+      <div class="hobby-img" style="background:linear-gradient(135deg,#FAECE7,#F5C4B3);">🌿</div>
+      <div class="hobby-body">
+        <span class="hobby-tag" style="background:var(--coral-light);color:var(--coral);">Alam & Lokal</span>
+        <h3>Berkebun Tanaman Herbal</h3>
+        <p>Menanam sirih, jahe, kunyit, dan tanaman herbal lokal. Sesuai minat saya pada penelitian herbal dental — potensi bahan alam Sumatera Selatan untuk kesehatan gigi sangat besar.</p>
+      </div>
+    </div>
+    <div class="hobby-card">
+      <div class="hobby-img" style="background:linear-gradient(135deg,#E6F1FB,#B5D4F4);">✍️</div>
+      <div class="hobby-body">
+        <span class="hobby-tag" style="background:#E6F1FB;color:#185FA5);">Kreatif</span>
+        <h3>Menulis Blog & Konten Kesehatan</h3>
+        <p>Menulis artikel populer tentang kesehatan gigi di blog SmileQuest ini. Percaya bahwa literasi digital adalah cara modern menyebarkan edukasi kesehatan gigi ke seluruh Indonesia.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- KONEKSI HOBI DAN DENTAL -->
+  <div class="section-label">Hobi & Kesehatan Gigi</div>
+  <div class="connection-block">
+    <h3>Bagaimana Hobi Saya Mendukung Karir Kesehatan Gigi</h3>
+    <div class="conn-list">
+      <div class="conn-item">
+        <span class="ico">📚</span>
+        <p><strong>Membaca Jurnal → Praktik Berbasis Bukti</strong>Kebiasaan membaca jurnal dental (JDPI, JDR, Oral Health) memastikan tindakan klinis saya selalu mengacu pada evidence-based dentistry terkini.</p>
+      </div>
+      <div class="conn-item">
+        <span class="ico">🏃‍♀️</span>
+        <p><strong>Olahraga → Penelitian Saliva & Periodontal</strong>Penelitian menunjukkan aktivitas fisik meningkatkan aliran saliva (saliva protektif gigi), menurunkan inflamasi periodontal, dan mengurangi risiko xerostomia.</p>
+      </div>
+      <div class="conn-item">
+        <span class="ico">🌿</span>
+        <p><strong>Berkebun Herbal → Riset Fitodental Lokal</strong>Ekstrak sirih, propolis, dan kunyit memiliki bukti aktivitas antimikroba terhadap Streptococcus mutans. Berkebun herbal mendekatkan saya pada potensi riset bahan alam Sumsel.</p>
+      </div>
+      <div class="conn-item">
+        <span class="ico">✍️</span>
+        <p><strong>Menulis Blog → Promosi Kesehatan Digital</strong>Di era digital, promosi kesehatan gigi tidak cukup hanya di klinik. Blog adalah media efektif menjangkau ribuan orang yang tidak sempat berkonsultasi langsung.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- GALERI FOTO -->
+  <div class="section-label">Galeri Kegiatan</div>
+  <div class="gallery-row">
+    <div class="gallery-item" style="background:linear-gradient(135deg,var(--teal-light),#9FE1CB);">
+      📖<span class="gallery-label" style="color:var(--teal);">Perpustakaan</span>
+    </div>
+    <div class="gallery-item" style="background:linear-gradient(135deg,var(--amber-light),#FAC775);">
+      🌅<span class="gallery-label" style="color:var(--amber);">Jogging Pagi</span>
+    </div>
+    <div class="gallery-item" style="background:linear-gradient(135deg,var(--coral-light),#F5C4B3);">
+      🌱<span class="gallery-label" style="color:var(--coral);">Kebun Herbal</span>
+    </div>
+    <div class="gallery-item" style="background:linear-gradient(135deg,#E6F1FB,#B5D4F4);">
+      💻<span class="gallery-label" style="color:#185FA5;">Nulis Blog</span>
+    </div>
+    <div class="gallery-item" style="background:linear-gradient(135deg,#EEEDFE,#AFA9EC);">
+      🎤<span class="gallery-label" style="color:#534AB7;">Seminar Gizi</span>
+    </div>
+    <div class="gallery-item" style="background:linear-gradient(135deg,var(--teal-light),#E1F5EE);">
+      🤝<span class="gallery-label" style="color:var(--teal);">Komunitas</span>
+    </div>
+  </div>
+
+  <!-- QUOTE -->
+  <div style="background:linear-gradient(135deg,var(--teal),#085041);color:white;border-radius:16px;padding:2rem;text-align:center;margin-bottom:2rem;">
+    <p style="font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:.75rem;line-height:1.5;">"Gigi yang sehat dimulai dari gaya hidup sehat — dan gaya hidup sehat dimulai dari kebiasaan kecil setiap hari."</p>
+    <p style="opacity:.75;font-size:.82rem;">— SmileQuest, 2026</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="fl">SmileQuest</div>
+  <p>Blog Kesehatan Gigi | <a href="index.html">Beranda</a> · <a href="profil.html">Profil</a> · <a href="kesgilut.html">Kesgilut</a></p>
+</footer>
+</body>
+</html>

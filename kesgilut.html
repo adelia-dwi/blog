@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kesehatan Gigi & Mulut — SmileQuest</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--teal:#0F6E56;--teal-light:#E1F5EE;--teal-mid:#1D9E75;--coral:#D85A30;--coral-light:#FAECE7;--amber:#BA7517;--amber-light:#FAEEDA;--text:#2C2C2A;--text-muted:#5F5E5A;--text-hint:#888780;--bg:#F8FDFB;--surface:#ffffff;--border:rgba(15,110,86,0.15);}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);}
+  nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
+  .nav-inner{max-width:1100px;margin:auto;padding:0 1.5rem;display:flex;align-items:center;gap:2rem;height:64px;}
+  .logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--teal);font-weight:700;text-decoration:none;}
+  .logo span{color:var(--coral);}
+  nav a{color:var(--text-muted);text-decoration:none;font-size:.875rem;font-weight:500;padding:.35rem .7rem;border-radius:6px;transition:all .2s;}
+  nav a:hover,nav a.active{background:var(--teal-light);color:var(--teal);}
+  .nav-links{display:flex;gap:.25rem;margin-left:auto;}
+  .page-hero{background:linear-gradient(135deg,#E1F5EE,#F8FDFB,#EEEDFE);padding:3rem 1.5rem;text-align:center;}
+  .page-hero .eyebrow{font-size:.72rem;font-weight:600;letter-spacing:2px;color:var(--teal-mid);text-transform:uppercase;margin-bottom:.75rem;}
+  .page-hero h1{font-family:'Playfair Display',serif;font-size:2.5rem;margin-bottom:.5rem;}
+  .page-hero p{color:var(--text-muted);font-size:.95rem;}
+  .wrap{max-width:900px;margin:3rem auto;padding:0 1.5rem;}
+  .section-label{font-size:.7rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--teal-mid);margin-bottom:1.5rem;padding-bottom:.5rem;border-bottom:2px solid var(--teal-light);}
+
+  /* intro banner */
+  .intro-banner{background:linear-gradient(135deg,var(--teal),#085041);color:white;border-radius:20px;padding:2.5rem;margin-bottom:2.5rem;display:flex;gap:2rem;align-items:center;}
+  @media(max-width:560px){.intro-banner{flex-direction:column;text-align:center;}}
+  .intro-banner .big-icon{font-size:5rem;flex-shrink:0;}
+  .intro-banner h2{font-family:'Playfair Display',serif;font-size:1.6rem;margin-bottom:.6rem;}
+  .intro-banner p{opacity:.85;font-size:.88rem;line-height:1.8;}
+
+  /* stats row */
+  .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2.5rem;}
+  @media(max-width:560px){.stats-row{grid-template-columns:1fr 1fr;}}
+  .stat-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.25rem;text-align:center;}
+  .stat-card .num{font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--teal);font-weight:700;display:block;}
+  .stat-card .lbl{font-size:.72rem;color:var(--text-hint);margin-top:.2rem;line-height:1.4;}
+
+  /* masalah section */
+  .masalah-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.25rem;margin-bottom:2.5rem;}
+  @media(max-width:700px){.masalah-grid{grid-template-columns:1fr;}}
+  .masalah-card{border-radius:14px;padding:1.4rem;border:1px solid;}
+  .masalah-card h3{font-size:.95rem;font-weight:700;margin-bottom:.5rem;}
+  .masalah-card p{font-size:.82rem;line-height:1.7;}
+  .m-karies{background:var(--coral-light);border-color:rgba(216,90,48,.2);color:var(--coral);}
+  .m-karies p{color:#993C1D;}
+  .m-perio{background:var(--amber-light);border-color:rgba(186,117,23,.2);color:var(--amber);}
+  .m-perio p{color:#854F0B;}
+  .m-muko{background:var(--teal-light);border-color:var(--border);color:var(--teal);}
+  .m-muko p{color:#085041;}
+
+  /* cara sikat */
+  .steps-block{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem;margin-bottom:2rem;}
+  .steps-block h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--teal);margin-bottom:1.25rem;}
+  .step-list{display:flex;flex-direction:column;gap:.75rem;}
+  .step-item{display:flex;gap:1rem;align-items:start;}
+  .step-num{width:36px;height:36px;border-radius:50%;background:var(--teal);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;flex-shrink:0;}
+  .step-text h4{font-size:.9rem;font-weight:600;margin-bottom:.2rem;}
+  .step-text p{font-size:.82rem;color:var(--text-muted);line-height:1.6;}
+
+  /* mitos fakta */
+  .mf-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem;}
+  @media(max-width:560px){.mf-grid{grid-template-columns:1fr;}}
+  .mf-card{border-radius:14px;padding:1.25rem;border:1px solid;}
+  .mf-mitos{background:#FFF5F5;border-color:#F7C1C1;}
+  .mf-fakta{background:var(--teal-light);border-color:var(--border);}
+  .mf-label{font-size:.68rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:.5rem;}
+  .mf-mitos .mf-label{color:#A32D2D;}
+  .mf-fakta .mf-label{color:var(--teal);}
+  .mf-card p{font-size:.83rem;line-height:1.7;color:var(--text-muted);}
+
+  /* kalkulator */
+  .calc-block{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem;margin-bottom:2rem;}
+  .calc-block h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--teal);margin-bottom:1rem;}
+  .calc-form{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1rem;}
+  @media(max-width:500px){.calc-form{grid-template-columns:1fr;}}
+  .form-group label{font-size:.78rem;font-weight:600;color:var(--text-muted);display:block;margin-bottom:.3rem;}
+  .form-group select,.form-group input{width:100%;border:1px solid var(--border);border-radius:8px;padding:.55rem .75rem;font-family:'Inter',sans-serif;font-size:.85rem;color:var(--text);}
+  .calc-result{background:var(--teal-light);border-radius:10px;padding:1rem;text-align:center;display:none;}
+  .calc-result .score{font-family:'Playfair Display',serif;font-size:2rem;color:var(--teal);}
+  .calc-result .interp{font-size:.82rem;color:var(--teal);margin-top:.3rem;}
+  .btn-calc{background:var(--teal);color:white;border:none;padding:.65rem 1.5rem;border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer;transition:opacity .2s;margin-top:.5rem;}
+  .btn-calc:hover{opacity:.9;}
+
+  /* nutrisi table */
+  .nutrisi-block{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem;margin-bottom:2rem;overflow-x:auto;}
+  .nutrisi-block h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--teal);margin-bottom:1rem;}
+  .nutrisi-block table{width:100%;border-collapse:collapse;font-size:.83rem;}
+  .nutrisi-block th{background:var(--teal-light);color:var(--teal);font-weight:600;padding:.65rem 1rem;text-align:left;}
+  .nutrisi-block td{padding:.65rem 1rem;border-bottom:1px solid var(--border);}
+  .nutrisi-block tr:last-child td{border-bottom:none;}
+
+  footer{background:var(--text);color:#B4B2A9;text-align:center;padding:2rem 1.5rem;margin-top:4rem;}
+  footer .fl{font-family:'Playfair Display',serif;font-size:1.3rem;color:white;margin-bottom:.5rem;}
+  footer p{font-size:.8rem;}
+  footer a{color:var(--teal-mid);text-decoration:none;}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Smile<span>Quest</span></a>
+    <div class="nav-links">
+      <a href="index.html">Beranda</a>
+      <a href="profil.html">Profil</a>
+      <a href="hobby.html">Hobi</a>
+      <a href="kesgilut.html" class="active">Kesgilut</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <p class="eyebrow">Halaman Statis</p>
+  <h1>Kesehatan Gigi & Mulut</h1>
+  <p>Panduan komprehensif menjaga kesehatan gigi sejak dini</p>
+</div>
+
+<div class="wrap">
+
+  <!-- INTRO -->
+  <div class="intro-banner">
+    <span class="big-icon">🦷</span>
+    <div>
+      <h2>Mulut adalah Jendela Kesehatan Tubuh</h2>
+      <p>Rongga mulut bukan sekadar alat kunyah dan bicara. Kondisi gigi dan gusi mencerminkan — bahkan mempengaruhi — kesehatan jantung, kadar gula darah, sistem imun, dan bahkan perkembangan janin. Menjaga kesehatan gigi berarti menjaga kualitas hidup secara menyeluruh.</p>
+    </div>
+  </div>
+
+  <!-- STATISTIK -->
+  <div class="section-label">Fakta & Data Kesgilut Indonesia</div>
+  <div class="stats-row">
+    <div class="stat-card"><span class="num">57%</span><span class="lbl">Penduduk Indonesia punya masalah gigi (Riskesdas 2018)</span></div>
+    <div class="stat-card"><span class="num">93%</span><span class="lbl">Anak sekolah dasar pernah mengalami karies gigi</span></div>
+    <div class="stat-card"><span class="num">29%</span><span class="lbl">Bumil mengalami gingivitis → risiko kelahiran prematur</span></div>
+    <div class="stat-card"><span class="num">1,8M</span><span class="lbl">Kunjungan gigi per tahun di Puskesmas Sumsel (estimasi)</span></div>
+  </div>
+
+  <!-- MASALAH UTAMA -->
+  <div class="section-label">Masalah Gigi Terbanyak di Indonesia</div>
+  <div class="masalah-grid">
+    <div class="masalah-card m-karies">
+      <h3>🦠 Karies Gigi</h3>
+      <p>Kerusakan jaringan keras gigi akibat asam dari bakteri Streptococcus mutans. Penyakit infeksi paling umum di Indonesia. Dapat dicegah dengan fluoride dan pola makan sehat.</p>
+    </div>
+    <div class="masalah-card m-perio">
+      <h3>🔴 Penyakit Periodontal</h3>
+      <p>Peradangan gusi (gingivitis) hingga kerusakan jaringan pendukung gigi (periodontitis). Berkaitan erat dengan diabetes, penyakit jantung, dan komplikasi kehamilan.</p>
+    </div>
+    <div class="masalah-card m-muko">
+      <h3>🟢 Lesi Mukosa Oral</h3>
+      <p>Sariawan berulang, kandidiasis, leukoplakia. Beberapa lesi adalah tanda awal kondisi serius (HIV, defisiensi vitamin, bahkan kanker mulut). Perlu skrining rutin.</p>
+    </div>
+  </div>
+
+  <!-- CARA SIKAT GIGI YANG BENAR -->
+  <div class="steps-block">
+    <h3>🪥 Cara Menyikat Gigi yang Benar (Metode Bass Modifikasi)</h3>
+    <div class="step-list">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-text"><h4>Posisi Sikat 45° ke Garis Gusi</h4><p>Arahkan bulu sikat 45 derajat menuju sulkus gingival (celah antara gusi dan gigi) untuk membersihkan plak subgingival.</p></div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-text"><h4>Gerakan Memutar Kecil (Vibrasi)</h4><p>Lakukan gerakan rotasi kecil (10 kali) tanpa menggeser sikat. Ini mengangkat plak dari sulkus tanpa melukai gusi.</p></div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-text"><h4>Sisir ke Arah Mahkota Gigi</h4><p>Setelah vibrasi, sisir sikat dari gusi ke ujung mahkota (atas ke bawah untuk gigi atas, bawah ke atas untuk gigi bawah).</p></div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">4</div>
+        <div class="step-text"><h4>Ulangi di Semua Permukaan</h4><p>Kerjakan permukaan bukal (pipi), lingual (lidah), dan oklusal (kunyah) secara sistematis. Total waktu minimum: 2 menit.</p></div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">5</div>
+        <div class="step-text"><h4>Lengkapi dengan Flossing & Obat Kumur</h4><p>Dental floss untuk celah antar gigi (tidak bisa dijangkau sikat), obat kumur fluor sebagai perlindungan tambahan.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MITOS VS FAKTA -->
+  <div class="section-label">Mitos vs Fakta Kesehatan Gigi</div>
+  <div class="mf-grid">
+    <div class="mf-card mf-mitos">
+      <div class="mf-label">❌ Mitos</div>
+      <p><strong>Gigi susu tidak perlu dirawat karena akan tanggal sendiri.</strong><br>Karies gigi susu dapat menyebabkan infeksi yang memengaruhi benih gigi permanen di bawahnya dan mengganggu tumbuh kembang anak.</p>
+    </div>
+    <div class="mf-card mf-fakta">
+      <div class="mf-label">✅ Fakta</div>
+      <p><strong>Gigi susu wajib dirawat sejak erupsi pertama (~usia 6 bulan).</strong><br>Gigi susu berfungsi penting untuk mengunyah, berbicara, menjaga ruang gigi permanen, dan estetika wajah anak.</p>
+    </div>
+    <div class="mf-card mf-mitos">
+      <div class="mf-label">❌ Mitos</div>
+      <p><strong>Ibu hamil tidak boleh cabut gigi atau ke dokter gigi.</strong><br>Kepercayaan ini berbahaya karena membiarkan infeksi gigi yang justru meningkatkan risiko komplikasi kehamilan.</p>
+    </div>
+    <div class="mf-card mf-fakta">
+      <div class="mf-label">✅ Fakta</div>
+      <p><strong>Perawatan gigi AMAN di trimester kedua kehamilan.</strong><br>Scaling, penambalan, bahkan pencabutan darurat bisa dilakukan dengan aman pada trimester kedua. Infeksi gigi tidak diobati jauh lebih berbahaya.</p>
+    </div>
+    <div class="mf-card mf-mitos">
+      <div class="mf-label">❌ Mitos</div>
+      <p><strong>Menyikat gigi lebih keras = lebih bersih.</strong><br>Sikat gigi terlalu keras justru menyebabkan abrasi (pengikisan) email gigi dan resesi gusi.</p>
+    </div>
+    <div class="mf-card mf-fakta">
+      <div class="mf-label">✅ Fakta</div>
+      <p><strong>Teknik dan durasi lebih penting dari tekanan.</strong><br>Gunakan sikat berbulu halus dengan tekanan ringan. Metode yang benar (Bass modifikasi) selama 2 menit jauh lebih efektif dari menyikat keras 30 detik.</p>
+    </div>
+    <div class="mf-card mf-fakta">
+      <div class="mf-label">✅ Fakta Menarik</div>
+      <p><strong>Kesehatan gigi buruk meningkatkan risiko penyakit jantung 2x lipat.</strong><br>Bakteri periodontal dapat masuk ke aliran darah dan memicu inflamasi pembuluh darah, menjadi faktor risiko aterosklerosis.</p>
+    </div>
+  </div>
+
+  <!-- KALKULATOR OHI -->
+  <div class="calc-block">
+    <h3>🔢 Kalkulator Risiko Karies Sederhana</h3>
+    <p style="font-size:.82rem;color:var(--text-muted);margin-bottom:1rem;">Jawab pertanyaan berikut untuk mendapatkan gambaran risiko karies Anda.</p>
+    <div class="calc-form">
+      <div class="form-group">
+        <label>Frekuensi sikat gigi per hari</label>
+        <select id="c1">
+          <option value="0">3x sehari atau lebih</option>
+          <option value="1">2x sehari (pagi & malam)</option>
+          <option value="2">1x sehari</option>
+          <option value="3">Kadang-kadang</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Konsumsi makanan/minuman manis</label>
+        <select id="c2">
+          <option value="0">Sangat jarang (&lt;1x/minggu)</option>
+          <option value="1">1-2x/minggu</option>
+          <option value="2">Setiap hari</option>
+          <option value="3">Sangat sering (>3x/hari)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Riwayat karies sebelumnya</label>
+        <select id="c3">
+          <option value="0">Tidak pernah</option>
+          <option value="1">1-2 gigi pernah ditambal</option>
+          <option value="2">3-5 gigi</option>
+          <option value="3">Lebih dari 5 gigi</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Konsumsi fluoride (pasta gigi/air minum)</label>
+        <select id="c4">
+          <option value="0">Selalu (pasta gigi fluor tiap hari)</option>
+          <option value="1">Kadang-kadang</option>
+          <option value="2">Jarang/tidak pernah</option>
+        </select>
+      </div>
+    </div>
+    <button class="btn-calc" onclick="calcRisk()">Hitung Risiko Saya</button>
+    <div class="calc-result" id="calcResult">
+      <div class="score" id="riskLevel">—</div>
+      <div class="interp" id="riskInterp">—</div>
+    </div>
+  </div>
+
+  <!-- NUTRISI -->
+  <div class="nutrisi-block">
+    <h3>🥗 Nutrisi Penting untuk Gigi Sehat</h3>
+    <table>
+      <thead><tr><th>Nutrisi</th><th>Manfaat untuk Gigi</th><th>Sumber Makanan Lokal</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Kalsium</strong></td><td>Pembentukan & penguatan email gigi dan tulang rahang</td><td>Susu, ikan teri, tahu, tempe</td></tr>
+        <tr><td><strong>Fosfor</strong></td><td>Remineralisasi email bersama kalsium</td><td>Ikan, daging, telur, kacang-kacangan</td></tr>
+        <tr><td><strong>Vitamin D</strong></td><td>Membantu penyerapan kalsium</td><td>Ikan berlemak, telur, paparan matahari pagi</td></tr>
+        <tr><td><strong>Vitamin C</strong></td><td>Sintesis kolagen untuk jaringan periodontal</td><td>Jambu biji, jeruk, pepaya, cabai merah</td></tr>
+        <tr><td><strong>Vitamin K2</strong></td><td>Mengaktifkan protein mineralisasi gigi</td><td>Tempe, keju, hati ayam</td></tr>
+        <tr><td><strong>Fluoride</strong></td><td>Penguatan email, pencegahan karies</td><td>Pasta gigi ber-fluor, air minum fluoridasi</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- KAPAN KE DOKTER GIGI -->
+  <div style="background:linear-gradient(135deg,var(--teal),#085041);color:white;border-radius:16px;padding:2rem;margin-bottom:2rem;">
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:1rem;">⏰ Kapan Harus ke Dokter Gigi?</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+      <div style="background:rgba(255,255,255,.12);border-radius:10px;padding:1rem;">
+        <p style="font-size:.82rem;line-height:1.7;opacity:.9;"><strong style="display:block;margin-bottom:.3rem;">📅 Rutin (tanpa keluhan):</strong>Minimal 6 bulan sekali untuk pemeriksaan dan scaling profesional. Deteksi dini jauh lebih hemat biaya daripada mengobati kerusakan lanjut.</p>
+      </div>
+      <div style="background:rgba(255,255,255,.12);border-radius:10px;padding:1rem;">
+        <p style="font-size:.82rem;line-height:1.7;opacity:.9;"><strong style="display:block;margin-bottom:.3rem;">🚨 Segera (ada keluhan):</strong>Nyeri gigi spontan, pembengkakan gusi/pipi, gigi goyang tiba-tiba, luka mulut tidak sembuh >2 minggu, gigi patah/retak.</p>
+      </div>
+    </div>
+    <p style="font-size:.78rem;opacity:.7;margin-top:1rem;text-align:center;">📍 Layanan gigi tersedia GRATIS dengan BPJS Kesehatan di Puskesmas terdekat Anda!</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="fl">SmileQuest</div>
+  <p>Blog Kesehatan Gigi | <a href="index.html">Beranda</a> · <a href="profil.html">Profil</a> · <a href="hobby.html">Hobi</a></p>
+</footer>
+
+<script>
+function calcRisk(){
+  const v = ['c1','c2','c3','c4'].reduce((s,id)=>s+parseInt(document.getElementById(id).value),0);
+  let level,interp;
+  if(v<=2){level='RISIKO RENDAH ✅';interp='Pertahankan kebiasaan baik ini! Tetap kontrol 6 bulan sekali.';}
+  else if(v<=5){level='RISIKO SEDANG ⚠️';interp='Perlu perbaikan kebersihan mulut dan pola makan. Kunjungi dokter gigi 3-6 bulan.';}
+  else{level='RISIKO TINGGI 🔴';interp='Segera konsultasikan ke dokter gigi! Diperlukan evaluasi klinis menyeluruh dan program pencegahan intensif.';}
+  document.getElementById('riskLevel').textContent=level;
+  document.getElementById('riskInterp').textContent=interp;
+  const r=document.getElementById('calcResult');
+  r.style.display='block';
+  r.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+</script>
+</body>
+</html>
